@@ -6,7 +6,6 @@ This web application predicts the likelihood of depression based on user inputs.
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Project Structure](#project-structure)
 - [Model and Data](#model-and-data)
 - [Contributing](#contributing)
 - [License](#license)
