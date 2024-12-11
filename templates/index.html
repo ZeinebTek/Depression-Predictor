@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depression Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #5a5a5a;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        label {
+            font-weight: bold;
+        }
+        select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Depression Prediction Form</h1>
+        <form action="/predict" method="post">
+            <label for="gender">What is your gender:</label>
+            <select name="gender" id="gender" required>
+                <option value="" disabled selected>Select your gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <label for="age">What is your age:</label>
+            <input type="number" name="age" id="age" required min="10" max="100"style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+
+            <label for="academic_pressure">On a scale from 1 to 5 how much academic pressure do you feel:</label>
+            <select name="academic_pressure" id="academic_pressure" required>
+                <option value="" disabled selected>Select a value</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+
+            <label for="study_satisfaction">On a scale from 1 to 5 how much satisfaction do you get from studying:</label>
+            <select name="study_satisfaction" id="study_satisfaction" required>
+                <option value="" disabled selected>Select a value</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+
+            <label for="sleep_duration">How long do you sleep every night:</label>
+            <select name="sleep_duration" id="sleep_duration" required>
+                <option value="" disabled selected>Select a value</option>
+                <option value="7-8 hours">7-8 hours</option>
+                <option value="5-6 hours">5-6 hours</option>
+                <option value="More than 8 hours">More than 8 hours</option>
+                <option value="Less than 5 hours">Less than 5 hours</option>
+            </select>
+
+            <label for="dietary_habits">What are your dieatary habits:</label>
+            <select name="dietary_habits" id="dietary_habits" required>
+                <option value="" disabled selected>Select a value</option>
+                <option value="Moderate">Moderate</option>
+                <option value="Healthy">Healthy</option>
+                <option value="Unhealthy">Unhealthy</option>
+            </select>
+
+            <label for="suicidal_thoughts">Have you ever had suicidal thoughts?</label>
+            <select name="suicidal_thoughts" id="suicidal_thoughts" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="study_hours">Study Hours:</label>
+            <select name="study_hours" id="study_hours" required>
+                <option value="" disabled selected>Select a value</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+
+            <label for="financial_stress">Rate your Financial Stress from 1 to 5:</label>
+            <select name="financial_stress" id="financial_stress" required>
+                <option value="" disabled selected>Select a value</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+
+            <label for="family_history">Family History of Mental Illness:</label>
+            <select name="family_history" id="family_history" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById("depressionForm").addEventListener("submit", function(event) {
+            const form = event.target;
+            const inputs = form.querySelectorAll("select, input[type='number']");
+            for (let input of inputs) {
+                if (!input.value) {
+                    alert("Please fill out all fields.");
+                    event.preventDefault();
+                    return;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

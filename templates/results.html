@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #5a5a5a;
+        }
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+        .encouragement {
+            margin-top: 20px;
+            font-style: italic;
+            color: #555;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        a:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <p>Are you depressed? <strong>{{ prediction }}</strong></p>
+
+        {% if prediction == 'Yes' %}
+        <p class="encouragement">
+            Please take care of your mental health. Remember, it's okay to seek help. Talk to trusted friends, family, or a mental health professional. You are not alone.
+        </p>
+        {% else %}
+        <p class="encouragement">
+            Keep up the positive energy and continue taking care of yourself! Always prioritize your well-being and spread kindness around you. 🌟
+        </p>
+        {% endif %}
+        
+        <a href="/">Go Back</a>
+    </div>
+</body>
+</html>
