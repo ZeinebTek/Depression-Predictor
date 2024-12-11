@@ -15,7 +15,7 @@ This web application predicts the likelihood of depression based on user inputs.
 1. Clone the repository:
     ```sh
     git clone https://github.com/ZeinebTek/Depression-Predictor
-    cd depression-prediction
+    cd Depression-Predictor
     ```
 
 2. Create and activate a virtual environment:
